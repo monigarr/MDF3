@@ -1,0 +1,53 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:descendantFocusability="beforeDescendants"
+	android:focusableInTouchMode="true"
+	android:background="@drawable/whitediamond" >
+
+    <EditText
+        android:id="@+id/editText_1"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/button_1"
+        android:ems="10"
+        android:hint="Search Blog"
+        android:inputType="textCapSentences"
+        android:paddingLeft="5dp"
+        android:textSize="16sp" />
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/spinner1"
+        android:layout_below="@+id/editText_1" />
+
+	<Button
+        android:id="@+id/button_1"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/editText_1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/dark"
+        android:textColor="@color/light"
+        android:text="SEARCH" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="5dp"
+        android:background="@color/dark"
+        android:textColor="@color/light"
+        android:prompt="@string/spinner_header"
+         />
+
+
+</RelativeLayout>

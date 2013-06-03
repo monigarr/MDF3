@@ -1,0 +1,14 @@
+<resources>
+
+    <style name="AppTheme" parent="android:Theme.Light" />
+
+    <color name="darkgray">#333333</color>
+    <color name="white">#ffffff</color>
+    <color name="green">#d91a2b</color>
+    <color name="dark">#64483F</color>
+    <color name="medium">#D4A797</color>
+    <color name="medium2">#DDD7C4</color>
+    <color name="medium3">#AEB8B7</color>
+    <color name="light">#F8F8F2</color>
+
+</resources>

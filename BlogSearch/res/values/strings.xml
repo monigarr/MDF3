@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BlogSearch</string>
+    <string name="menu_settings">Settings</string>
+    <string name="share">Share</string>
+    <string name="spinner_header">Previous Search</string>
+
+    <string name="share_title">Share</string>
+    <string name="share_text">Share Options are at Top Right of Screen.</string>
+    <string name="share_checkbox">OK</string>
+    
+    <string name="search_title">Search</string>
+    <string name="search_text">Search for Android or Test.</string>
+    <string name="search_checkbox">OK</string>
+    
+    <string name="fave_title">Faves</string>
+    <string name="fave_text">Previous searches will be listed at bottom of Screen.</string>
+    <string name="fave_checkbox">OK</string>
+    
+    <string name="search2_title">Search</string>
+    <string name="search2_text">Try searching for Test.</string>
+    <string name="search2_checkbox">OK</string>
+    
+    <string name="share_action_providers">Share Action Providers</string>
+    <string name="share_action_providers_content">This activity demos how to use ActionProvider to add functions to Action Bar -> A menu item with ShareActionProvider as its action provider. The ShareActionProvider is responsible for managing the UI for sharing actions.\n\nI used ActionBarSherlock Library for this feature.</string>
+	<string name="action_bar_share_with">Share with…</string>
+	
+</resources>

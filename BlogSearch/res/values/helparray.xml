@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <array name="share">
+        <item>share_title</item>
+        <item>icon</item>
+        <item>share_text</item>
+        <item>share_checkbox</item>
+    </array>
+    
+	<array name="search">
+        <item>search_title</item>
+        <item>icon</item>
+        <item>search_text</item>
+        <item>search_checkbox</item>
+    </array>
+    
+	<array name="fave">
+        <item>fave_title</item>
+        <item>icon</item>
+       	<item>fave_text</item>
+	    <item>fave_checkbox</item>
+    </array>
+    
+	<array name="search2">
+        <item>search2_title</item>
+        <item>icon</item>
+        <item>search2_text</item>
+        <item>search2_checkbox</item>
+    </array>
+    
+</resources>

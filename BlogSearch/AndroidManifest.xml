@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.monigarr.blogsearch"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="17" />
+    
+
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.Sherlock.Light.DarkActionBar" >
+        <activity
+            android:name="com.monigarr.blogsearch.MainActivity"
+            android:windowSoftInputMode="stateHidden"
+            android:configChanges="orientation|screenSize"
+            android:label="BlogSearch" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.monigarr.blogsearch.DetailPage"
+            android:label="Blog Details" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.monigarr.blogsearch.DETAILS"/>
+            </intent-filter>
+        </activity>
+        <activity 
+            android:label="@string/share_action_providers" 
+            android:name=".ShareActionProviders" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.monigarr.blogsearch.SHARE"/>
+            </intent-filter>
+        </activity>
+        <service
+            android:name="com.monigarr.blogsearch.PassSearch"
+            android:enabled="true" >
+        </service>
+        <provider
+        	android:name="BlogContentProvider"
+        	android:authorities="com.monigarr.blogsearch.provider"
+        	android:exported="true" >
+        </provider>
+    </application>
+
+</manifest>
