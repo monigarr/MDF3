@@ -8,11 +8,11 @@ MDF3
 - Student: Monica Peters
 
 ====
-PROJECT 1. APP INTEGRATION.
+PROJECT 1. APP INTEGRATION. IMAGINIZER
 * Due Thursday June 6th 2013
 * Completed
 
-Requirements:
+REQUIREMENTS:
 * use 1 min. screen management technique.
 * app launches activity in response to external implicit intent.
 * app handles dynamic data (user input) sent by the launching intent.
@@ -22,12 +22,18 @@ Requirements:
 * ui shows relevant nested layouts, colors, hints.
 * app is structured with relevant organization & constructs.
 
+- android ndk required by library AndroidImageFilter
+http://developer.android.com/tools/sdk/ndk/index.html#Installing
+- AndroidImageFilter library required by Imaginizer
+https://github.com/ragnraok/android-image-filter
+- parse.com api used to manage data (login,users,links)
+
 ====
 PROJECT 2. ADVANCED FEATURES.
 * Due Thursday June 13th 2013
 * Completed
 
-Requirements:
+REQUIREMENTS:
 * app uses 1 feature (minimum) from each group. 
 * group 1: camera or media playback.
 * group 2: location, sensors, adv. file storage, proximity.
@@ -38,7 +44,7 @@ PROJECT 3. WIDGETS & ACTIONBARS.
 * Due Thursday June 20th 2013
 * Completed
 
-Requirements:
+REQUIREMENTS:
 * action bar nav. with 2 or more activities.
 * action bar shortcuts. min: 1 shortcut icon, 1 option in overflow nav.
 * widget to add to home screen with usable view that will launch an intent handled by the app.  The intent displays dynamically changing data.
@@ -56,7 +62,7 @@ PROJECT 4. HYBRID APP.
 * Due Thursday June 27th 2013
 * Completed
 
-Requirements:
+REQUIREMENTS:
 * WebView: 1 data collection control.
 * WebView: 1 ui control (button...).
 * WebView: 1 js method for enhanced ui.

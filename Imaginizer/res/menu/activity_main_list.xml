@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/refreshButton"
+        android:showAsAction="always"
+        android:icon="@drawable/ic_action_refresh"
+        android:title="@string/ab_refresh" />
+    
+    <item
+        android:id="@+id/addButton"
+        android:showAsAction="always"
+        android:title="@string/ab_add" />
+    
+    <item
+        android:id="@+id/followButton"
+        android:showAsAction="ifRoom"
+        android:title="@string/ab_follow" />
+    
+    <item
+        android:id="@+id/logoutButton"
+        android:showAsAction="ifRoom"
+        android:title="@string/ab_logout" />
+
+</menu>

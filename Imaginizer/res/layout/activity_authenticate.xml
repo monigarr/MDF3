@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AuthenticateActivity" >
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:hint="@string/email_address_hint"
+        android:inputType="textEmailAddress" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editText1"
+        android:ems="10"
+        android:hint="@string/password_hint"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editText2"
+        android:text="@string/loginButtonLabel" />
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/button1"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend accumsan metus, in pharetra felis blandit et. Donec commodo, dolor in tristique sagittis, magna diam cursus ipsum, vitae porta justo eros nec erat. Integer vel odio ante, sit amet pulvinar urna. Nunc pellentesque leo vehicula libero sodales tempus. Mauris pellentesque tortor sit amet tellus consequat suscipit porta arcu rhoncus. Nam dictum ante et lacus feugiat tempus. Duis ac nulla sed purus dapibus bibendum vitae sed mauris. Donec non ante id metus ultrices sollicitudin sed at sem. Maecenas in magna vitae eros dapibus elementum id eu dolor. Fusce et lacus ac sem dignissim consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas." />
+
+</RelativeLayout>
