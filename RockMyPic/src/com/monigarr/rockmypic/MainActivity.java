@@ -51,6 +51,10 @@ public class MainActivity extends Activity {
 
 		textView = (TextView) findViewById(R.id.textView);
 		imageView = (ImageView) findViewById(R.id.result);
+		
+		//animation experiment http://developer.android.com/guide/topics/resources/animation-resource.html
+		//Animation imageJump = AnimationUtils.loadAnimation(this, R.anim.image_jump);
+		//imageView.startAnimation(imageJump);
 
 		// get image user picked from gallery or other image app
 		// Get the intent that started this activity

@@ -5,59 +5,70 @@
     android:alignmentMode="alignBounds"
     android:background="#000000"
     android:columnCount="1"
-    android:scrollbarStyle="outsideOverlay" >
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    android:scrollbarStyle="outsideOverlay"
+    android:textAlignment="center" >
 
     <Spinner
         android:id="@+id/spinner"
+        android:layout_height="39dp"
         android:layout_gravity="fill_horizontal"
         android:background="#FFFFFF"
         android:drawSelectorOnTop="true" >
     </Spinner>
 
+    <ImageView
+        android:id="@+id/result"
+        android:layout_width="148dp"
+        android:layout_height="180dp"
+        android:layout_column="0"
+        android:layout_gravity="left|top"
+        android:layout_row="1"
+        android:src="@drawable/rockmypic_logo" />
+
     <Button
         android:id="@+id/trigger"
-        android:layout_width="match_parent"
+        android:layout_width="151dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_column="0"
+        android:layout_gravity="center_horizontal|top"
         android:layout_marginBottom="9dip"
         android:layout_marginLeft="9dip"
         android:layout_marginRight="9dip"
         android:layout_marginTop="9dip"
+        android:layout_row="1"
         android:background="#CCFF00"
         android:onClick="onClick"
         android:text="Trigger Intent"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#092B5A" >
-    </Button>
+        android:textColor="#092B5A" />
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="match_parent"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_column="0"
+        android:layout_gravity="right|top"
         android:layout_marginBottom="9dip"
         android:layout_marginLeft="9dip"
         android:layout_marginRight="9dip"
         android:layout_marginTop="9dip"
+        android:layout_row="1"
         android:background="#FFFFFF"
         android:onClick="pickImage"
         android:text="Pick Image"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#092B5A" >
-    </Button>
+        android:textColor="#092B5A" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="344dp"
+        android:layout_height="91dp"
+        android:layout_column="0"
+        android:layout_gravity="right|center_vertical"
+        android:layout_row="1"
         android:text="1. Start Image Gallery App. 2. Pick Image. 3. Tap Share on Top Right of Screen. 4. Choose RockMyPic App."
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#FFFFFF" />
-
-    <ImageView
-        android:id="@+id/result"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/rockmypic_logo" />
 
 </GridLayout>
