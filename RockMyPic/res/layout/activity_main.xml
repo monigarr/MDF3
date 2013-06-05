@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alignmentMode="alignBounds"
+    android:background="#000000"
+    android:columnCount="1"
+    android:scrollbarStyle="outsideOverlay" >
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_gravity="fill_horizontal"
+        android:background="#FFFFFF"
+        android:drawSelectorOnTop="true" >
+    </Spinner>
+
+    <Button
+        android:id="@+id/trigger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="9dip"
+        android:layout_marginLeft="9dip"
+        android:layout_marginRight="9dip"
+        android:layout_marginTop="9dip"
+        android:background="#CCFF00"
+        android:onClick="onClick"
+        android:text="Trigger Intent"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#092B5A" >
+    </Button>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="9dip"
+        android:layout_marginLeft="9dip"
+        android:layout_marginRight="9dip"
+        android:layout_marginTop="9dip"
+        android:background="#FFFFFF"
+        android:onClick="pickImage"
+        android:text="Pick Image"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#092B5A" >
+    </Button>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="-Or - 1. Start Image Gallery App. 2. Pick Image. 3. Tap Share on Top Right of Screen. 4. Choose RockMyPic App."
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FFFFFF" />
+
+    <ImageView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/rockmypic_logo" />
+
+</GridLayout>

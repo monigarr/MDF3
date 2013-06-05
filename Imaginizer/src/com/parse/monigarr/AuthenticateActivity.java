@@ -67,10 +67,9 @@ public class AuthenticateActivity extends Activity {
 										MainFeedActivity.class));
 							} else {
 								// Sign up didn't succeed. Look at the
-								// ParseException
-								// to figure out what went wrong
+								// ParseException to figure out what went wrong
 								Toast.makeText(AuthenticateActivity.this,
-										"Signup failed. Try Again",
+										"Sign up failed! Try again.",
 										Toast.LENGTH_LONG).show();
 							}
 						}
@@ -90,11 +89,11 @@ public class AuthenticateActivity extends Activity {
 												AuthenticateActivity.this,
 												MainFeedActivity.class));
 									} else {
-										// Signup failed. Look at the
+										// Login failed. Look at the
 										// ParseException to see what happened.
 										Toast.makeText(
 												AuthenticateActivity.this,
-												"Login failed. Try Again",
+												"Login failed! Try again.",
 												Toast.LENGTH_LONG).show();
 									}
 								}

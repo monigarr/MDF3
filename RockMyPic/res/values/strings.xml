@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RockMyPic</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello World</string>
+    <string name="menu_settings">Settings</string>
+    <string name="desc_rockmypic_logo">RockMyPic Logo</string>
+    <string name="my_image">image</string>
+    
+</resources>

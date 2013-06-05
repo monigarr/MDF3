@@ -53,7 +53,7 @@ public class MainFeedActivity extends ListActivity {
 		 * Use ParseQuery to get latest posts
 		 */
 		ParseQuery query = new ParseQuery(AddLinkActivity.POSTS);
-		query.setLimit(10);
+		query.setLimit(50);
 		query.orderByDescending("createAt");
 		query.findInBackground(new FindCallback() {
 			public void done(List<ParseObject> results, ParseException e) {
@@ -113,8 +113,6 @@ public class MainFeedActivity extends ListActivity {
 			/*
 			 * Log current user out using ParseUser.logOut()
 			 */
-			//clear user from cache. they will be taken to login/signup
-			//activity
 			ParseUser.logOut();
 			Intent intent = new Intent(this, LoginOrSignupActivity.class);
 			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

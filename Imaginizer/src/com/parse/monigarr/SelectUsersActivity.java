@@ -17,6 +17,7 @@ import com.parse.ParseQuery;
 import com.parse.ParseRelation;
 import com.parse.ParseUser;
 import com.parse.monigarr.R;
+
 public class SelectUsersActivity extends ListActivity {
 	
 	public static final String TAG = SelectUsersActivity.class.getSimpleName();
@@ -66,7 +67,7 @@ public class SelectUsersActivity extends ListActivity {
 				}
 				else {
 					// Something went wrong.
-					Toast.makeText(SelectUsersActivity.this, "Sorry, there was an error getting users!", Toast.LENGTH_LONG).show();
+					Toast.makeText(SelectUsersActivity.this, "Error getting users!", Toast.LENGTH_LONG).show();
 				}
 			}
 		});

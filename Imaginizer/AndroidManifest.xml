@@ -45,7 +45,6 @@
         </activity>
 
         <service android:name="com.parse.monigarr.PushService" />
-
         <receiver android:name="com.parse.monigarr.ParseBroadcastReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />

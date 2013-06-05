@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CallMe</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_login_or_signup">Log In or Sign Up</string>
+    <string name="title_activity_authenticate">Log In</string>
+    <string name="title_activity_select_users">Select Users</string>
+    <string name="title_activity_add_link">Add a Link</string>
+    <string name="loginButtonLabel">Log In</string>
+    <string name="password_hint">password</string>
+    <string name="email_address_hint">email address</string>
+    <string name="ab_refresh">Refresh</string>
+    <string name="ab_add">Add</string>
+    <string name="ab_follow">Follow</string>
+    <string name="ab_logout">Log Out</string>
+    <string name="signup_button_label">Sign Up</string>
+    <string name="login_button_label">Log In</string>
+    <string name="desc_treehouse_logo">Treehouse Logo</string>
+    
+</resources>
