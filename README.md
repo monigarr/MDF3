@@ -8,25 +8,22 @@ MDF3
 - Student: Monica Peters
 
 ====
-PROJECT 1. APP INTEGRATION. IMAGINIZER
+PROJECT 1. APP INTEGRATION. ROCKMYPIC
 * Due Thursday June 6th 2013
-* Completed
+* Completed Wednesday June 5th 2013
 
 REQUIREMENTS:
 * use 1 min. screen management technique.
 * app launches activity in response to external implicit intent.
+-- Use Image App on Device.  Pick Image. Tap Share on Top Right. Choose RockMyPic App.
 * app handles dynamic data (user input) sent by the launching intent.
+-- image sent to app from gallery app on device.
 * app uses orientation restrictions and/or window enhancements / alterations to frame the app with correct usability.
+-- res/layout and res/layout-land
 * ui includes personalization for the app.
 * ui shows data.
 * ui shows relevant nested layouts, colors, hints.
 * app is structured with relevant organization & constructs.
-
-- android ndk required by library AndroidImageFilter
-http://developer.android.com/tools/sdk/ndk/index.html#Installing
-- AndroidImageFilter library required by Imaginizer
-https://github.com/ragnraok/android-image-filter
-- parse.com api used to manage data (login,users,links)
 
 ====
 PROJECT 2. ADVANCED FEATURES.
