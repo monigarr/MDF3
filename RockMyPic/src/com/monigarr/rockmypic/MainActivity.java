@@ -34,6 +34,7 @@ public class MainActivity extends Activity {
 	private static final int REQUEST_CODE = 1;
 	private Bitmap bitmap;
 	private ImageView imageView;
+	@SuppressWarnings("unused")
 	private TextView textView;
 
 	@Override

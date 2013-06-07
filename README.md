@@ -32,9 +32,14 @@ PROJECT 2. ADVANCED FEATURES.
 
 REQUIREMENTS:
 * app uses 1 feature (minimum) from each group. 
-* group 1: camera or media playback.
-* group 2: location, sensors, adv. file storage, proximity.
-* group 3: notifications, hardware sensors, power/network management.
+* group 1: camera, video, or audio playback.
+* group 2: location, sensors, gps, file storage, proximity detection.
+* group 3: status management (phone or network or battery), notifications, hardware sensors.
+
+Planned: 
+Record Audio Notes about Specific Map Locations and Save to device.
+When device is within x distance to Map Location, the Audio file Plays.
+Toast shows Battery, Phone, and Network Status.
 
 ====
 PROJECT 3. WIDGETS & ACTIONBARS.
