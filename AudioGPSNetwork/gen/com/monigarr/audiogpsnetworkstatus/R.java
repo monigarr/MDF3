@@ -34,6 +34,7 @@ public final class R {
     public static final class id {
         public static final int action_settings=0x7f0b0002;
         public static final int buttonShowLocation=0x7f0b0001;
+        public static final int location=0x7f0b0004;
         public static final int refresh=0x7f0b0003;
         public static final int webview=0x7f0b0000;
     }
@@ -49,22 +50,23 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f080001;
         public static final int app_name=0x7f080000;
-        public static final int connection_error=0x7f08000c;
+        public static final int connection_error=0x7f08000d;
         public static final int gps_settings=0x7f080005;
         public static final int hello_world=0x7f080002;
-        public static final int lost_connection=0x7f08000a;
+        public static final int location=0x7f080008;
+        public static final int lost_connection=0x7f08000b;
         public static final int network_settings=0x7f080006;
         /**   NetworkActivity 
          */
-        public static final int page_title=0x7f080008;
+        public static final int page_title=0x7f080009;
         public static final int refresh=0x7f080007;
         /**   Menu items 
          */
         public static final int settings=0x7f080004;
         public static final int text_results=0x7f080003;
-        public static final int updated=0x7f080009;
-        public static final int wifi_connected=0x7f08000b;
-        public static final int xml_error=0x7f08000d;
+        public static final int updated=0x7f08000a;
+        public static final int wifi_connected=0x7f08000c;
+        public static final int xml_error=0x7f08000e;
     }
     public static final class style {
         /** 

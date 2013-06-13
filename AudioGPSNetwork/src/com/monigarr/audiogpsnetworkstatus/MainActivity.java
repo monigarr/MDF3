@@ -14,6 +14,7 @@ package com.monigarr.audiogpsnetworkstatus;
  * 
  * 
  * GPS: 
+ * 		Show Location in Toast on app Load.
  * 		Show specific url data feed in webview, based on device location.
  * 		If connection not available show error message in webview.
  * 		http://developer.android.com/training/location/retrieve-current.html
@@ -43,6 +44,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import com.monigarr.audiogpsnetworkstatus.GPSTracker;
 import com.monigarr.audiogpsnetworkstatus.SettingsActivity;
 import com.monigarr.audiogpsnetworkstatus.StackOverflowXmlParser.Entry;
+import com.monigarr.audiogpsnetworkstatus.R;
 
 import android.media.MediaPlayer;
 import android.net.ConnectivityManager;
@@ -64,6 +66,7 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.Toast;
 
+
 public class MainActivity extends Activity {
 
 	MediaPlayer logoMusic;
@@ -72,6 +75,7 @@ public class MainActivity extends Activity {
 	GPSTracker gps;
 	MainActivity showNetworkStatus;
 	String showTextResults;
+	WebView myWebView;
 	
 	 public static final String WIFI = "Wi-Fi";
 	    public static final String ANY = "Any";
@@ -87,58 +91,10 @@ public class MainActivity extends Activity {
 
 	    // User's current network preference setting.
 	    public static String sPref = null;
-
+	    
 	    // BroadcastReceiver tracks network connectivity changes.
 	    private NetworkReceiver receiver = new NetworkReceiver();
 	    
-    
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-
-		//PLAY AUDIO 
-        //no loop, only play once
-		logoMusic = MediaPlayer.create(MainActivity.this, R.raw.arcadia);
-		logoMusic.start();
-				
-		//SHOW LOCATION
-		buttonShowLocation = (Button) findViewById(R.id.buttonShowLocation);		
-        buttonShowLocation.setOnClickListener(new View.OnClickListener() {
-             
-            @Override
-            public void onClick(View arg0) {       
-                // create class object
-                gps = new GPSTracker(MainActivity.this);
- 
-                // check if GPS enabled    
-                if(gps.canGetLocation()){
-                     
-                    double latitude = gps.getLatitude();
-                    double longitude = gps.getLongitude();
-                     
-                    // \n is for new line
-                    Toast.makeText(getApplicationContext(), "Your Location:  \nLatitude: " + latitude + "\nLongitude: " + longitude + "\n", Toast.LENGTH_LONG).show();  
-                    Log.i("Toast gps","Toast GPS");
-                    Log.i("BUTTON CLICKED:", Double.toString(latitude));
-                    Log.i("BUTTON CLICKED:", Double.toString(longitude));
-                }else{
-                    // can't get location
-                    // GPS or Network is not enabled
-                    // Ask user to enable GPS/network in settings
-                    gps.showSettingsAlert();
-                }
-                 
-            }
-        });
-
-     // Register BroadcastReceiver to track connection changes.
-        IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
-        receiver = new NetworkReceiver();
-        this.registerReceiver(receiver, filter);
-	
-	}
-	
 	//if interrupted by a phone call...
 	@Override
 	protected void onPause() {
@@ -151,6 +107,7 @@ public class MainActivity extends Activity {
     // Refreshes display if network connection and pref settings allow.
     @Override
     public void onStart() {
+    	
         super.onStart();
 
         // Gets user's network pref settings
@@ -168,6 +125,7 @@ public class MainActivity extends Activity {
         // you don't want to refresh display--this would force display of
         // an error page instead of stackoverflow.com content.
         if (refreshDisplay) {
+        	Toast.makeText(getApplicationContext(), "Loading StackOverflow Feed", Toast.LENGTH_LONG).show(); 
             loadPage();
         }
     }
@@ -190,9 +148,13 @@ public class MainActivity extends Activity {
         if (activeInfo != null && activeInfo.isConnected()) {
             wifiConnected = activeInfo.getType() == ConnectivityManager.TYPE_WIFI;
             mobileConnected = activeInfo.getType() == ConnectivityManager.TYPE_MOBILE;
+            Log.i("Connected","Connected");
+            Toast.makeText(getApplicationContext(), "Connected", Toast.LENGTH_LONG).show();  
         } else {
             wifiConnected = false;
             mobileConnected = false;
+            Log.i("Not Connected","Not Connected");
+            Toast.makeText(getApplicationContext(), "Not Connected", Toast.LENGTH_LONG).show(); 
         }
     }
 
@@ -205,8 +167,10 @@ public class MainActivity extends Activity {
                 || ((sPref.equals(WIFI)) && (wifiConnected))) {
             // AsyncTask subclass
             new DownloadXmlTask().execute(URL);
+            Toast.makeText(getApplicationContext(), "StackOverflow Data Loaded", Toast.LENGTH_LONG).show(); 
         } else {
             showErrorPage();
+            Toast.makeText(getApplicationContext(), "StackOverflow Data Not Loaded", Toast.LENGTH_LONG).show(); 
         }
     }
 
@@ -215,7 +179,6 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         // Specified network connection is not available. Displays error message.
-        WebView myWebView = (WebView) findViewById(R.id.webview);
         myWebView.loadData(getResources().getString(R.string.connection_error),
                 "text/html", null);
     }
@@ -376,4 +339,47 @@ public class MainActivity extends Activity {
             }
         }
     }
+    
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		
+		//PLAY AUDIO 
+        //no loop, only play once
+		logoMusic = MediaPlayer.create(MainActivity.this, R.raw.arcadia);
+		logoMusic.start();
+				
+		//SHOW LOCATION
+		// create class object
+        gps = new GPSTracker(MainActivity.this);
+
+        // check if GPS enabled    
+        if(gps.canGetLocation()){
+             
+            double latitude = gps.getLatitude();
+            double longitude = gps.getLongitude();
+             
+            // \n is for new line
+            Toast.makeText(getApplicationContext(), "Your Location:  \nLatitude: " + latitude + "\nLongitude: " + longitude + "\n", Toast.LENGTH_LONG).show();  
+            Log.i("Toast gps","Toast GPS");
+            Log.i("BUTTON CLICKED:", Double.toString(latitude));
+            Log.i("BUTTON CLICKED:", Double.toString(longitude));
+        }else{
+            // can't get location
+            // GPS or Network is not enabled
+            // Ask user to enable GPS/network in settings
+            gps.showSettingsAlert();
+        }
+
+		
+        // Register BroadcastReceiver to track connection changes.
+        IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        receiver = new NetworkReceiver();
+        this.registerReceiver(receiver, filter);
+        
+	      //WEBVIEW STACKOVERFLOW FEED
+	      myWebView = (WebView) findViewById(R.id.webview);
+
+	}
 }

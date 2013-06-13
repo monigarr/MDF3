@@ -11,6 +11,7 @@
     <string name="gps_settings">GPS Settings</string>
     <string name="network_settings">Network Settings</string>
     <string name="refresh">Refresh</string>
+    <string name="location">My Location</string>
 
     <!--  NetworkActivity -->
     <string name="page_title">Newest StackOverflow Questions Tagged \'android\'</string>
