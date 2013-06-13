@@ -21,6 +21,10 @@ package com.monigarr.audiogpsnetworkstatus;
  * 		http://developer.android.com/reference/android/location/LocationManager.html
  * 		http://android-developers.blogspot.ca/2011/06/deep-dive-into-location.html
  * 		http://www.androidhive.info/2012/07/android-gps-location-manager-tutorial/
+ * 		http://www.javacodegeeks.com/2010/09/android-location-based-services.html
+ * 
+ * PROXIMITY for future reference:
+ * 		http://www.javacodegeeks.com/2011/01/android-proximity-alerts-tutorial.html
  * 
  * NETWORK STATUS: 	
  * 		If network available show data feed.  
@@ -61,7 +65,6 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.Toast;
@@ -70,30 +73,28 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 
 	MediaPlayer logoMusic;
-	Button buttonShowLocation;
-	Button buttonShowNetworkStatus;
 	GPSTracker gps;
 	MainActivity showNetworkStatus;
 	String showTextResults;
 	WebView myWebView;
 	
-	 public static final String WIFI = "Wi-Fi";
-	    public static final String ANY = "Any";
-	    private static final String URL =
-	            "http://stackoverflow.com/feeds/tag?tagnames=android&sort=newest";
+	public static final String WIFI = "Wi-Fi";
+    public static final String ANY = "Any";
+    private static final String URL =
+            "http://stackoverflow.com/feeds/tag?tagnames=android&sort=newest";
 
-	    // Is Wi-Fi connection available.
-	    private static boolean wifiConnected = false;
-	    // Is mobile connection available.
-	    private static boolean mobileConnected = false;
-	    // Should display be refreshed.
-	    public static boolean refreshDisplay = true;
+    // Is Wi-Fi connection available.
+    private static boolean wifiConnected = false;
+    // Is mobile connection available.
+    private static boolean mobileConnected = false;
+    // Should display be refreshed.
+    public static boolean refreshDisplay = true;
 
-	    // User's current network preference setting.
-	    public static String sPref = null;
-	    
-	    // BroadcastReceiver tracks network connectivity changes.
-	    private NetworkReceiver receiver = new NetworkReceiver();
+    // User's current network preference setting.
+    public static String sPref = null;
+    
+    // BroadcastReceiver tracks network connectivity changes.
+    private NetworkReceiver receiver = new NetworkReceiver();
 	    
 	//if interrupted by a phone call...
 	@Override
@@ -163,6 +164,34 @@ public class MainActivity extends Activity {
     // causing a delay that results in poor user experience, always perform
     // network operations on a separate thread from the UI.
     private void loadPage() {
+    	
+    	// URL change default based on location
+    	
+    	//USA
+    	/*
+    	private static final String URL =
+	            "http://stackoverflow.com/feeds/tag?tagnames=android&sort=newest";    	
+    	//EUROPE
+    	private static final String URL =
+	            "http://stackoverflow.com/feeds/tag?tagnames=java&sort=newest";
+    	
+    	//CHINA
+    	private static final String URL =
+	            "http://stackoverflow.com/feeds/tag?tagnames=php&sort=newest";
+    	
+    	//JAPAN
+    	private static final String URL =
+	            "http://stackoverflow.com/feeds/tag?tagnames=javascript&sort=newest";
+    	
+    	//INDIA
+    	private static final String URL =
+	            "http://stackoverflow.com/feeds/tag?tagnames=jquery&sort=newest";
+    	
+    	//AFRICA
+    	private static final String URL =
+	            "http://stackoverflow.com/feeds/tag?tagnames=c++&sort=newest";
+    	*/
+    	
         if (((sPref.equals(ANY)) && (wifiConnected || mobileConnected))
                 || ((sPref.equals(WIFI)) && (wifiConnected))) {
             // AsyncTask subclass
@@ -363,8 +392,6 @@ public class MainActivity extends Activity {
             // \n is for new line
             Toast.makeText(getApplicationContext(), "Your Location:  \nLatitude: " + latitude + "\nLongitude: " + longitude + "\n", Toast.LENGTH_LONG).show();  
             Log.i("Toast gps","Toast GPS");
-            Log.i("BUTTON CLICKED:", Double.toString(latitude));
-            Log.i("BUTTON CLICKED:", Double.toString(longitude));
         }else{
             // can't get location
             // GPS or Network is not enabled

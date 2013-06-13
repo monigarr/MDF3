@@ -17,14 +17,15 @@
         android:layout_width="fill_parent"
         android:layout_height="200dp" />
 
-    <Button
-        android:id="@+id/buttonShowLocation"
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/webview"
         android:layout_alignRight="@+id/webview"
         android:layout_below="@+id/webview"
-        android:layout_marginTop="21dp"
-        android:text="My Location" />
+        android:layout_centerInParent="true"
+        android:layout_marginTop="42dp"
+        android:text="Tap Settings at Top Right for More Options" />
 
 </RelativeLayout>
