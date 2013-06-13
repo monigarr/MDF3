@@ -1,0 +1,15 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:title="Download Feed"
+        android:summary="Network Connection Needed to Download Feed."
+        android:key="listPref"
+        android:defaultValue="Wi-Fi"
+        android:entries="@array/listArray"
+        android:entryValues="@array/listValues"
+     />
+    <CheckBoxPreference
+        android:title="Show Summaries"
+        android:defaultValue="false"
+        android:summary="Show Summary for Each Feed Link."
+        android:key="summaryPref" />
+</PreferenceScreen>

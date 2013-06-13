@@ -1,0 +1,13 @@
+<resources>
+    
+    <string-array name="listArray">
+        <item>Only Wi-Fi</item>
+        <item>Any Network</item>
+    </string-array>
+    
+    <string-array name="listValues">
+        <item>Wi-Fi</item>
+        <item>Any</item>  
+    </string-array>
+    
+</resources>

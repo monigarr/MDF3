@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AudioGPSNetwork</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="text_results">Tap Buttons or Settings at Top Right of the Screen</string>
+    
+    <!--  Menu items -->
+    <string name="settings">Settings</string>
+    <string name="gps_settings">GPS Settings</string>
+    <string name="network_settings">Network Settings</string>
+    <string name="refresh">Refresh</string>
+
+    <!--  NetworkActivity -->
+    <string name="page_title">Newest StackOverflow Questions Tagged \'android\'</string>
+    <string name="updated">Last Updated:</string>
+    <string name="lost_connection">Lost Connection.</string>
+    <string name="wifi_connected">Wi-Fi ReConnected.</string>
+    <string name="connection_error">Unable to Load Content. Check Network Connection.</string>
+    <string name="xml_error">Error Parsing XML.</string>
+
+</resources>
