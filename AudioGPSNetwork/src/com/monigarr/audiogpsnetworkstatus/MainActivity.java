@@ -41,7 +41,6 @@ import java.util.List;
 import org.xmlpull.v1.XmlPullParserException;
 
 import com.monigarr.audiogpsnetworkstatus.GPSTracker;
-import com.monigarr.audiogpsnetworkstatus.NetworkActivity;
 import com.monigarr.audiogpsnetworkstatus.SettingsActivity;
 import com.monigarr.audiogpsnetworkstatus.StackOverflowXmlParser.Entry;
 
@@ -71,7 +70,7 @@ public class MainActivity extends Activity {
 	Button buttonShowLocation;
 	Button buttonShowNetworkStatus;
 	GPSTracker gps;
-	NetworkActivity showNetworkStatus;
+	MainActivity showNetworkStatus;
 	String showTextResults;
 	
 	 public static final String WIFI = "Wi-Fi";
@@ -97,12 +96,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		// Register BroadcastReceiver to track connection changes.
-        IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
-        receiver = new NetworkReceiver();
-        this.registerReceiver(receiver, filter);
-		
+
 		//PLAY AUDIO 
         //no loop, only play once
 		logoMusic = MediaPlayer.create(MainActivity.this, R.raw.arcadia);
@@ -138,7 +132,10 @@ public class MainActivity extends Activity {
             }
         });
 
-	
+     // Register BroadcastReceiver to track connection changes.
+        IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        receiver = new NetworkReceiver();
+        this.registerReceiver(receiver, filter);
 	
 	}
 	
