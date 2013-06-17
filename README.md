@@ -9,6 +9,7 @@ MDF3
 
 ====
 PROJECT 1. APP INTEGRATION. ROCKMYPIC
+====
 * Due Thursday June 6th 2013
 * Completed Wednesday June 5th 2013
 
@@ -26,9 +27,10 @@ REQUIREMENTS:
 * app is structured with relevant organization & constructs.
 
 ====
-PROJECT 2. ADVANCED FEATURES.
+PROJECT 2. ADVANCED FEATURES. AudioGPSNetwork
+====
 * Due Thursday June 13th 2013
-* Completed
+* Completed Wednesday June 12th 2013
 
 REQUIREMENTS:
 * app uses 1 feature (minimum) from each group. 
@@ -37,12 +39,13 @@ REQUIREMENTS:
 * group 3: status management (phone or network or battery), notifications, hardware sensors.
 
 Planned: 
-Record Audio Notes about Specific Map Locations and Save to device.
-When device is within x distance to Map Location, the Audio file Plays.
-Toast shows Battery, Phone, and Network Status.
+Audio plays in background when app runs.
+Location of device shows when app runs.
+If network available, rss feed content shows on main view.
 
 ====
 PROJECT 3. WIDGETS & ACTIONBARS.  ActionBarWidgetDemo.
+====
 * Due Thursday June 20th 2013
 * Completed Monday June 17th 2013
 
