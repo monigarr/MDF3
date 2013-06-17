@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ABWidgetDemo</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">MDF3 Project 3 Widget / Action Bar Demo</string>
+    <string name="widget_name">Widget Info</string>
+	<string name="button_text">Click Me</string>
+	<string name="buttontxt">Click Me!</string>
+    <string name="widgetname">ABWidget Demo</string>
+    <string name="widgettext">Widget</string>
+</resources>
