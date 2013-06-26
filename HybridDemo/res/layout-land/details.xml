@@ -4,51 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/caribic_brown" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignRight="@+id/imageView1"
-        android:layout_below="@+id/button4"
-        android:padding="@dimen/padding15"
-        android:textAlignment="center"
-        android:text="@string/hello_world"
-        android:textColor="@color/caribic_daylight"
-        android:textSize="@dimen/small" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button2"
-        android:layout_toRightOf="@+id/imageView1"
-        android:text="@string/pic"
-    	android:background="@color/caribic_sun"
-        android:textColor="@color/caribic_brown"  />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button4"
-        android:layout_below="@+id/button4"
-        android:text="@string/delete"
-    	android:background="@color/caribic_daylight"
-        android:textColor="@color/caribic_brown"  />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/imageView1"
-        android:background="@color/invisible_ufo"
-        android:text="@string/call"
-        android:textColor="@color/caribic_daylight" />
-
-    <ImageView
+   <ImageView
         android:id="@+id/imageView1"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -57,15 +13,61 @@
         android:contentDescription="@string/hello_world"
         android:padding="@dimen/imagepadding"
         android:src="@drawable/behance" />
+        
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding15"
+        android:layout_toRightOf="@+id/imageView1"
+        android:padding="@dimen/padding15"
+        android:text="@string/hello_world"
+        android:textAlignment="center"
+        android:textColor="@color/caribic_daylight"
+        android:textSize="@dimen/medium" />
+    
+   <Button
+       android:id="@+id/buttonPhone"
+       android:layout_width="88dip"
+       android:layout_height="wrap_content"
+       android:layout_alignParentRight="true"
+       android:layout_alignParentTop="true"
+       android:layout_toRightOf="@+id/textView1"
+       android:background="@color/invisible_ufo"
+       android:text="@string/call"
+       android:textColor="@color/caribic_daylight" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
+        android:id="@+id/buttonEmail"
+        android:layout_width="88dip"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_below="@+id/button1"
-        android:text="@string/email"
+        android:layout_alignLeft="@+id/buttonPhone"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/buttonPhone"
+        android:layout_toRightOf="@+id/textView1"
         android:background="@color/caribic_red"
+        android:text="@string/email"
         android:textColor="@color/caribic_daylight" />
+    
+    <!--  Button
+        android:id="@+id/buttonPicture"
+        android:layout_width="88dip"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonEmail"
+        android:layout_toRightOf="@+id/imageView1"
+        android:text="@string/pic"
+    	android:background="@color/caribic_sun"
+        android:textColor="@color/caribic_brown"  / -->
+
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="88dip"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonEmail"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/buttonEmail"
+        android:background="@color/caribic_daylight"
+        android:text="@string/delete"
+        android:textColor="@color/caribic_brown" />
 
 </RelativeLayout>

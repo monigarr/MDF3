@@ -68,6 +68,7 @@ import android.graphics.Bitmap;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -125,7 +126,7 @@ public class Main extends Activity {
 			myWebView.addJavascriptInterface(application, "HybridDemo");
 			myWebView.requestFocusFromTouch();
 			myWebView.setWebViewClient(new WebViewClient());
-			//myWebView.setWebChromeClient(new WebChromeClient());
+			myWebView.setWebChromeClient(new WebChromeClient());
 			myWebView.loadUrl("file:///android_asset/addproject.html");
 
 		} else {
@@ -236,7 +237,9 @@ public class Main extends Activity {
 				projectObject.put("project_notes", project_notes);
 				projectObject.put("client_phone", client_phone);
 				projectObject.put("client_email", client_email);
-				projectObject.saveInBackground();
+				//projectObject.saveInBackground();
+				//If No Network Available. Store on Device until Network is Available.
+				projectObject.saveEventually();
 
 				Intent i = new Intent(mContext, AddProject.class);
 				startActivity(i);

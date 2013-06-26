@@ -8,25 +8,25 @@ $('#submit').bind('click', function(){
 	var getclient_phone = $('#client_phone').val();
 	
 	//required
-	if(getproject_name == "" || getproject_name == "Operation Green"){ 
+	if(getproject_name == ""){ 
 		$('#project_name').css('border', '3px solid yellow');
 		return false;
 	}
 	//required
-	if(getproject_url == "" || getproject_url == "http://www.yoursite.com"){ 
+	if(getproject_url == ""){ 
 		$('#project_url').css('border', '3px solid yellow');
 		return false;
 	}
 	//not required
-	if(getproject_notes == "" || getproject_notes == "The most amazing project evar."){ 
+	if(getproject_notes == ""){ 
 		return true;
 	}
 	//not required
-	if(getclient_phone == "" || getclient_phone == "8765309"){
+	if(getclient_phone == ""){
 		return true;
 	}
 	//not required
-	if(getclient_email == "" || getclient_email == "name@email.com"){ 
+	if(getclient_email == ""){ 
 		return true;
 	}else{
 		$('#project_name').css('border', '1px solid #ccc');
@@ -56,10 +56,23 @@ $('#submit').bind('click', function(){
 		projectObject.set("client_phone", getclient_phone);
 		projectObject.set("client_email", getclient_email);
 		//projectObject.save(null,
-		projectObject.save({getproject_name: "project_name"},{project_url: "getproject_url"},{project_notes: "getproject_notes"},{client_phone: "getclient_phone"},{client_email: "getclient_email"}, 
+		projectObject.save({getproject_name: "project_name",getproject_url: "project_url",getproject_notes: "project_notes",getclient_phone: "client_phone",getclient_email: "client_email"}, 
+				//projectObject.saveInBackground({...});
+				//projectObject.save({...})
+				//If No Network Available. Store on Device until Network is Available.
+				//projectObject.saveEventually({...});
+		//projectObject.saveEventually({getproject_name: "project_name"},{project_url: "getproject_url"},{project_notes: "getproject_notes"},{client_phone: "getclient_phone"},{client_email: "getclient_email"}, 
 			{success: function(projectObject) {
 			// Execute logic that should take place after object is saved.
-			alert('New Object Created:' + projectObject.id);
+			alert('Your Project Saved to our Parse.com Database with id: ' + projectObject.id);
+			
+			//Context context = getApplicationContext();
+			//CharSequence text = "Object Saved to Parse.com";
+			//int duration = Toast.LENGTH_SHORT;
+
+			//Toast toast = Toast.makeText(context, text, duration);
+			//toast.show();
+			Android.showToast(toast);
 		  },
 		  error: function(projectObject, error) {
 			// Execute logic that should take place if save fails.

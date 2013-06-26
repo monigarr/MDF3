@@ -1,5 +1,9 @@
 package com.monigarr.hybriddemo;
 
+/*
+ * Telephone Tutorial: http://www.mkyong.com/android/how-to-make-a-phone-call-in-android/
+ */
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -49,10 +53,10 @@ public class Details extends Activity {
 		ParseAnalytics.trackAppOpened(getIntent());
 		
 		TextView tv = (TextView) findViewById(R.id.textView1);
-		Button btn = (Button) findViewById(R.id.button1);
-		Button btn2 = (Button) findViewById(R.id.button2);
-		Button btn3 = (Button) findViewById(R.id.button3);
-		Button btn4 = (Button) findViewById(R.id.button4);
+		Button btnPhone = (Button) findViewById(R.id.buttonPhone);
+		Button btnEmail = (Button) findViewById(R.id.buttonEmail);
+		Button btnDelete = (Button) findViewById(R.id.buttonDelete);
+		//Button btnPicture = (Button) findViewById(R.id.buttonPicture);
 		_imageView = (ImageView) findViewById(R.id.imageView1);
 		
 		// get image user picked from gallery or other image app
@@ -90,7 +94,8 @@ public class Details extends Activity {
 		tv.setText(_project_name+"\n"+_project_url+"\n"+_project_notes+"\n"+_client_email+"\n"+_client_phone);
 		
 		// PICTURE
-        btn4.setOnClickListener(new View.OnClickListener() {           
+		/*
+		btnPicture.setOnClickListener(new View.OnClickListener() {           
             @Override
             public void onClick(View view) {
             	//Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
@@ -98,17 +103,16 @@ public class Details extends Activity {
             	intent.setType("image/*");
             	startActivityForResult(intent, 0);
             }
-        });
+        }); */
 		
 		// CALL 
-        
-        // add PhoneStateListener
+        // PhoneStateListener
  		PhoneCallListener phoneListener = new PhoneCallListener();
  		TelephonyManager telephonyManager = (TelephonyManager) this
  			.getSystemService(Context.TELEPHONY_SERVICE);
  		telephonyManager.listen(phoneListener,PhoneStateListener.LISTEN_CALL_STATE);
      		
-		btn.setOnClickListener(new OnClickListener() {
+		btnPhone.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Log.i("TAG NUMBER", _client_phone);
@@ -125,7 +129,7 @@ public class Details extends Activity {
 		});
 		
 		// EMAIL
-		btn2.setOnClickListener(new OnClickListener() {
+		btnEmail.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Log.i("TAG EMAIL", _client_email);
@@ -144,7 +148,7 @@ public class Details extends Activity {
 		}); 
 		
 		// DELETE PROJECT
-		btn3.setOnClickListener(new OnClickListener() {
+		btnDelete.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				ParseQuery query = new ParseQuery("ProjectObject");
