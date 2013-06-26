@@ -30,7 +30,7 @@ Native Requirements
     Properly defined JavaScript interface
     	AddProject.java
     At least 1 method to accept and meaningfully handle data from WebView
-    	AddProject.jsava
+    	AddProject.java
     At least 1 intent initiated from a method called from WebView
     	Main, AddProject, Details
  *
@@ -52,7 +52,6 @@ Native Requirements
 
 import java.io.File;
 import java.util.HashMap;
-import java.util.List;
 
 import android.net.ConnectivityManager;
 import android.net.Uri;
@@ -65,8 +64,6 @@ import android.app.Application;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
 import android.util.Log;
 import android.view.Menu;
@@ -109,7 +106,7 @@ public class Main extends Activity {
 		//Analytics processed by Parse.com
 		ParseAnalytics.trackAppOpened(getIntent());
 		
-		//Analytics process by NewRelic.com
+		//Analytics processed by NewRelic.com
 		NewRelic.withApplicationToken( "AA503aec9d69a0acb423ef1404f9d2aed1abd7d150" ).start(this.getApplication());
 
 		ConnectivityManager connection = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
