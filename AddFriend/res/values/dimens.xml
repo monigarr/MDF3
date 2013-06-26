@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size">22sp</dimen>
+    <dimen name="padding">5px</dimen>
+    <dimen name="padding15">15px</dimen>
+    <dimen name="imagepadding">30px</dimen>
+</resources>

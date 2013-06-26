@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/caribic_brown" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/imageView1"
+        android:layout_below="@+id/button4"
+        android:padding="@dimen/padding15"
+        android:textAlignment="center"
+        android:text="@string/hello_world"
+        android:textColor="@color/caribic_daylight"
+        android:textSize="@dimen/small" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button2"
+        android:layout_toRightOf="@+id/imageView1"
+        android:text="@string/pic"
+    	android:background="@color/caribic_sun"
+        android:textColor="@color/caribic_brown"  />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button4"
+        android:layout_below="@+id/button4"
+        android:text="@string/delete"
+    	android:background="@color/caribic_daylight"
+        android:textColor="@color/caribic_brown"  />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imageView1"
+        android:background="@color/invisible_ufo"
+        android:text="@string/call"
+        android:textColor="@color/caribic_daylight" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/hello_world"
+        android:padding="@dimen/imagepadding"
+        android:src="@drawable/behance" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_below="@+id/button1"
+        android:text="@string/email"
+        android:background="@color/caribic_red"
+        android:textColor="@color/caribic_daylight" />
+
+</RelativeLayout>

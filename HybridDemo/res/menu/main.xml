@@ -1,9 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-
+    
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_settings"/>
-
+        android:id="@+id/refreshButton"
+        android:showAsAction="always"
+        android:icon="@drawable/ic_action_refresh"
+        android:title="@string/ab_refresh" />
+    
+    <item 
+        android:id="@+id/homeButton"
+        android:showAsAction="always"
+        android:icon="@drawable/home"
+        android:title="@string/menu_home" />
+    
+    <item 
+        android:id="@+id/addButton"
+        android:showAsAction="ifRoom"
+        android:icon="@drawable/badgeplus"
+        android:title="@string/menu_add" />
+    
 </menu>

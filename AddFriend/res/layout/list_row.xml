@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:padding="5dip" >
+ 
+    <!--  ListRow Left sied Thumbnail image -->
+    <LinearLayout android:id="@+id/list_thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dip"
+        android:layout_alignParentLeft="true"
+        android:background="@color/gray"
+        android:layout_marginRight="5dip">
+ 
+        <ImageView
+            android:id="@+id/list_image"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="@string/hello_world"
+            android:src="@drawable/ic_launcher" />
+ 
+    </LinearLayout>
+ 
+    <!-- Name -->
+
+    <TextView
+        android:id="@+id/list_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/list_thumbnail"
+        android:layout_toRightOf="@+id/list_thumbnail"
+        android:text="@string/listnametext"
+        android:textColor="#040404"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+ 
+    <!-- Detail -->
+
+    <TextView
+        android:id="@+id/list_detail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/list_name"
+        android:layout_marginTop="1dip"
+        android:layout_toRightOf="@+id/list_thumbnail"
+        android:text="@string/listdetailtext"
+        android:textColor="#343434"
+        android:textSize="10sp" />
+ 
+</RelativeLayout>
