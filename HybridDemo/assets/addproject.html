@@ -22,7 +22,6 @@
 	
 		<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
 		<script type="text/javascript" charset="utf-8" src="modernizr.custom.min.js"></script>
-		<!--script type="text/javascript" charset="utf-8" src="cordova.js"></script-->
 		
 		<!-- Monica's custom style sheet-->
 		<!-- call custom style sheets last when using jqmobile -->
@@ -34,23 +33,21 @@
 	<div data-role="page" id="addprojectform" data-theme="a">
 		<div data-role="header"></div>
 		<div data-role="content">
-            <fieldset>
-				<legend><h3 id="formtitle">ADD PROJECT INFO</h3></legend>
 				<!--show thanks in toast after form submitted-->
 				<form action="#" method="post" name="addprojectform" id="addprojectform">
-					<label for="project_name">Project Name: required</label>
+					<label for="project_name">PROJECT NAME: required</label>
 					<input type="text" name="project_name" id="project_name" placeholder="Operation Green" class="required" autofocus />
 				
-					<label for="project_url">Project URL: required</label>
+					<label for="project_url">PROJECT URL: required</label>
 					<input type="url" name="project_url" id="project_url" placeholder="http://www.website.com" class="required"  />
 				
-					<label for="project_notes">Project Notes:</label>
+					<label for="project_notes">NOTES:</label>
 					<input type="text" name="project_notes" id="project_notes" placeholder="Description"  />
                     
-                    <label for="client_phone">Client Phone:</label>
+                    <label for="client_phone">PHONE:</label>
 					<input type="tel" name="client_phone" id="client_phone" placeholder="3156003331" pattern="d{10}" />
                     
-                    <label for="client_email">Client Email:</label>
+                    <label for="client_email">EMAIL:</label>
 					<input type="email" name="client_email" id="client_email" placeholder="name@email.com"  />
                 
 					<div id="submit-reset-buttons">
@@ -58,10 +55,9 @@
 		                	<a href="#" title="Camera Snapshot"><img height="38" width="60" id="myImage" alt="Camera Snapshot"  /></a>
 		                </div-->
 		                <!--a href="$('#client_phone').val();" data-role="button" id="call" value="Call"> : CALL : </a-->
-		                <a href="#" data-role="button" id="submit"> : ADD : </a>	
+		                <a href="#" data-role="button" data-theme="a" id="submit"> : ADD : </a>	
 					</div><!-- /submit-reset-buttons -->
 				</form>
-			</fieldset>
 	</div><!-- /content -->
 	<div data-role="footer"></div>
 </div><!-- /addproject /page -->
@@ -73,7 +69,5 @@
     <script type="text/javascript" charset="utf-8" src="jquery.mobile-1.3.1.min.js"></script>    
     <script type="text/javascript" charset="utf-8" src="parse-1.2.8.min.js"></script>
 	<script type="text/javascript" charset="utf-8" src="main.js"></script>
-    <script type="text/javascript" charset="utf-8" src="camera.js"></script>
-    <script type="text/javascript" charset="utf-8" src="capture.js"></script>
 </body>
 </html>

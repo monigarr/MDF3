@@ -60,17 +60,13 @@ NATIVE REQUIREMENTS
  * http://stackoverflow.com/questions/11152391/android-send-string-between-activities
  */
 
-import java.io.File;
 import java.util.HashMap;
 
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -163,39 +159,6 @@ public class Main extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-	
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		
-		case R.id.refreshButton:
-			Log.i("TAG", "REFRESH");
-			return super.onOptionsItemSelected(item);
-			
-		case R.id.addButton:
-			Log.i("TAG", "ADD");
-			ConnectivityManager connection = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-			if (connection != null
-					&& (connection.getNetworkInfo(1).isAvailable() == true)
-					|| (connection.getNetworkInfo(0).isAvailable() == true)) {
-				Intent i = new Intent(getApplicationContext(), Main.class);
-				startActivity(i);
-			} else {
-				Toast toast = Toast.makeText(this, "NO CONNECTION", Toast.LENGTH_SHORT);
-				toast.show();
-			}
-			break;
-
-		case R.id.homeButton:
-			Log.i("TAG", "HOME");
-			Intent ii = new Intent(getApplicationContext(), AddProject.class);
-			startActivity(ii);
-			break;
-			
-		}
-		return true;
-	}
 
 	public class WebAppInterface {
 		Context mContext;
@@ -254,5 +217,39 @@ public class Main extends Activity {
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 
+	}
+	
+	
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		
+		case R.id.refreshButton:
+			Log.i("TAG", "REFRESH");
+			return super.onOptionsItemSelected(item);
+			
+		case R.id.addButton:
+			Log.i("TAG", "ADD");
+			ConnectivityManager connection = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+			if (connection != null
+					&& (connection.getNetworkInfo(1).isAvailable() == true)
+					|| (connection.getNetworkInfo(0).isAvailable() == true)) {
+				Intent i = new Intent(getApplicationContext(), Main.class);
+				startActivity(i);
+			} else {
+				Toast toast = Toast.makeText(this, "NO CONNECTION", Toast.LENGTH_SHORT);
+				toast.show();
+			}
+			break;
+
+		case R.id.homeButton:
+			Log.i("TAG", "HOME");
+			Intent ii = new Intent(getApplicationContext(), AddProject.class);
+			startActivity(ii);
+			break;
+			
+		}
+		return true;
 	}
 }
