@@ -61,7 +61,7 @@ $('#submit').bind('click', function(){
 				//projectObject.save({...})
 				//If No Network Available. Store on Device until Network is Available.
 				//projectObject.saveEventually({...});
-		//projectObject.saveEventually({getproject_name: "project_name"},{project_url: "getproject_url"},{project_notes: "getproject_notes"},{client_phone: "getclient_phone"},{client_email: "getclient_email"}, 
+				//projectObject.saveEventually({getproject_name: "project_name"},{project_url: "getproject_url"},{project_notes: "getproject_notes"},{client_phone: "getclient_phone"},{client_email: "getclient_email"}, 
 			{success: function(projectObject) {
 			// Execute logic that should take place after object is saved.
 			alert('Your Project Saved to our Parse.com Database with id: ' + projectObject.id);
@@ -77,7 +77,8 @@ $('#submit').bind('click', function(){
 		  error: function(projectObject, error) {
 			// Execute logic that should take place if save fails.
 			// error is a Parse.Error with error code and description.
-			alert('Failed to create new projectObject. Error Code: ' + error.description);
+			alert('Your Project Was Not Saved. Error Code: ' + error.description);
+			Android.showToast(toast);
 		  }
 		});
 	}	
@@ -86,8 +87,7 @@ $('#submit').bind('click', function(){
 
 $(document).ready(function(){
 	//Parse.com Permission Required
-	//mdf3 project 
-	//Parse.initialize("LGG1MbCVOrLbi6Hr6lXxiWTMoqEwjGQX4RAjjMCN", "XINCv5XuXUffmWtVGO41TXRf1P0SFowjSfay9L7C");
+	//mdf3 project -> Parse.initialize("LGG1MbCVOrLbi6Hr6lXxiWTMoqEwjGQX4RAjjMCN", "XINCv5XuXUffmWtVGO41TXRf1P0SFowjSfay9L7C");
 	//hybrid demo
 	Parse.initialize("LGG1MbCVOrLbi6Hr6lXxiWTMoqEwjGQX4RAjjMCN", "JDK7gh8CIpUmyrroxnMlGwlg2EcVYCwCLgiqm4vZ");
 	/*

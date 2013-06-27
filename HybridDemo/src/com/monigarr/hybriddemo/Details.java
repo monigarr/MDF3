@@ -41,7 +41,6 @@ public class Details extends Activity {
 	String _client_phone;
 	String _client_email;
 	String _theId;
-	private static final int REQUEST_CODE = 1;
 	private ImageView _imageView;
 	Context _context;
 	
@@ -56,29 +55,8 @@ public class Details extends Activity {
 		Button btnPhone = (Button) findViewById(R.id.buttonPhone);
 		Button btnEmail = (Button) findViewById(R.id.buttonEmail);
 		Button btnDelete = (Button) findViewById(R.id.buttonDelete);
-		//Button btnPicture = (Button) findViewById(R.id.buttonPicture);
 		_imageView = (ImageView) findViewById(R.id.imageView1);
 		
-		// get image user picked from gallery or other image app
-		// Get the intent that started this activity
-		// Get intent, action and MIME type
-		Intent intent = getIntent();
-		String action = intent.getAction();
-		String type = intent.getType();
-		
-		//make sure it's an action and type we can handle
-				if (Intent.ACTION_SEND.equals(action) && type != null){
-				    //image is shared from another mobile app on device.
-					if (type.startsWith("image/")) {
-						handleSendImage(intent); // Handle single image being sent
-					}
-				}
-				else if (Intent.ACTION_MAIN.equals(action) && type != null){
-				    //app launched directly, not from share list
-					Toast.makeText(Details.this,
-							"Use Gallery Image on Device: 1. Tap Image. 2. Share Image on top right. 3. Choose RockMyPic app.",
-							Toast.LENGTH_LONG).show();
-				}
 		
 		Intent i = getIntent();
 		_allData = i.getStringExtra("AllData");
@@ -93,17 +71,6 @@ public class Details extends Activity {
 		
 		tv.setText(_project_name+"\n"+_project_url+"\n"+_project_notes+"\n"+_client_email+"\n"+_client_phone);
 		
-		// PICTURE
-		/*
-		btnPicture.setOnClickListener(new View.OnClickListener() {           
-            @Override
-            public void onClick(View view) {
-            	//Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-            	Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-            	intent.setType("image/*");
-            	startActivityForResult(intent, 0);
-            }
-        }); */
 		
 		// CALL 
         // PhoneStateListener
@@ -201,25 +168,6 @@ public class Details extends Activity {
  
 			}
 		}
-	}
-
-	void handleSendImage(Intent intent) {
-		//get uri of the received image
-		Uri imageUri = (Uri) intent.getParcelableExtra(Intent.EXTRA_STREAM);
-		if (imageUri != null) {
-			// Update UI to reflect image being shared
-			//set picture resample image data before showing
-		    _imageView.setImageURI(imageUri);
-		}
-	}
-
-	// user picked image from gallery app
-	public void pickImage(View View) {
-		Intent intent = new Intent();
-		intent.setType("image/*");
-		intent.setAction(Intent.ACTION_GET_CONTENT);
-		intent.addCategory(Intent.CATEGORY_OPENABLE);
-		startActivityForResult(intent, REQUEST_CODE);
 	}
 	
 	protected void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {

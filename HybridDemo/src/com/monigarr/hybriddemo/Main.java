@@ -8,31 +8,41 @@ package com.monigarr.hybriddemo;
  * MDF3 June 2013
  * 
  * Project Requirements
- * WebView Requirements
+
+WEBVIEW REQUIREMENTS
 
     Well designed
-    	My WebView calls to my self hosted web form at http://www.monicalamb.com/add_project_mdf3_project4.html
-    	I used jquery, jquery mobile, javascript, css3, html5 to create webform.
+    	My WebView calls to local html5,css3,js 
+    	I used jquery, jquery mobile, javascript, css3, html5 to create html5 form.
     	Color Theme inspired by ColourLovers: http://www.colourlovers.com/palette/1473/Ocean_Five
+    
     At least 1 data collection control and 1 user interaction control (button, etc.)
-    	Submit Form and Camera Button on html form.
-    At least 1 JavaScript method for enhanced UI
-    	jquery, main.js customizes jquery mobile body ui
-    	http://www.monicalamb.com/javascripts/mdf3.js
-    	http://www.monicalamb.com/javascripts/main.js
-    At least 1 JavaScript method for native integration
-    	http://www.monicalamb.com/javascripts/camera.js
+    	Text Entry Fields and Submit Button on HTML5 Form sends data to Parse.com when Network Available.
+    	If No Network Available, the data is stored locally and sent later when Network is Available.
+    
+    At least 1 JS method for enhanced UI
+    	main.js
+    	validation, highlights required fields
+    
+    At least 1 JS method for native integration
+    	Toast Message after html5 form is submitted & validated.
+    	showData Main.java
 
-Native Requirements
+NATIVE REQUIREMENTS
 
     At least 1 meaningful Activity including a WebView
-    	Main, AddProject, Details
-    Properly defined JavaScript interface
-    	AddProject.java
+    	Activities: Main, AddProject, Details
+    
+    Properly defined JS interface
+    	Main.java myWebView
+    
     At least 1 method to accept and meaningfully handle data from WebView
-    	AddProject.java
+    	AddProject.java  local html5 form
+    	Main.java  shows list of items created on WebView form
+    	Details.java shows details of each item list
+    
     At least 1 intent initiated from a method called from WebView
-    	Main, AddProject, Details
+    	Toast
  *
  * 
  * Tutorials
@@ -60,7 +70,6 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.Application;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
@@ -122,9 +131,13 @@ public class Main extends Activity {
 			webSettings.setJavaScriptEnabled(true);
 			webSettings.setDomStorageEnabled(true);
 			
-			Application application = getApplication();
-			myWebView.addJavascriptInterface(application, "HybridDemo");
+			//Application application = getApplication();
+			//create interface called Android for JS to run in WebView.
+			//now my web app can access WebAppInterface class
+			//http://developer.android.com/guide/webapps/webview.html
+			myWebView.addJavascriptInterface(new WebAppInterface(this), "Android");
 			myWebView.requestFocusFromTouch();
+			//load all links in my webview
 			myWebView.setWebViewClient(new WebViewClient());
 			myWebView.setWebChromeClient(new WebChromeClient());
 			myWebView.loadUrl("file:///android_asset/addproject.html");
@@ -133,28 +146,17 @@ public class Main extends Activity {
 			Toast toast = Toast.makeText(this, "NO CONNECTION",Toast.LENGTH_SHORT);
 			toast.show();
 		}
-		
-		//test
-		/*
-		ParseObject testObject = new ParseObject("TestObject");
-		testObject.put("project_name", project_name);
-		testObject.put("project_url", project_url);
-		testObject.put("project_notes", project_notes);
-		testObject.put("client_phone", client_phone);
-		testObject.put("client_emaikl", client_email);
-		testObject.saveInBackground();
-		
-		//test
-		ParseObject projectObject = new ParseObject("projectObject");
-		projectObject.put("project_name", project_name);
-		projectObject.put("project_url", project_url);
-		projectObject.put("project_notes", project_notes);
-		projectObject.put("client_phone", client_phone);
-		projectObject.put("client_emaikl", client_email);
-		projectObject.saveInBackground();
-		*/
-
 	}
+	
+	public boolean shouldOverrideUrlLoading(WebView view, String url) {
+        if (url.startsWith("tel:")) { 
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(url)); 
+                startActivity(intent); 
+        }else if(url.startsWith("#")) {
+            view.loadUrl(url);
+        }
+        return true;
+    }
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -246,41 +248,11 @@ public class Main extends Activity {
 			}
 		}
 
-		// @JavascriptInterface
-		public void showCamera(String c) {
-			Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-			File photo = new File(Environment.getExternalStorageDirectory(), "ProjectImage.jpg");
-			intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photo));
-			imageUri = Uri.fromFile(photo);
-			startActivityForResult(intent, TAKE_PICTURE);
-		}
-
 	}
 
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 
-		if (resultCode == Activity.RESULT_OK) {
-			Uri selectedImage = imageUri;
-			getContentResolver().notifyChange(selectedImage, null);
-			// ImageView imageView = (ImageView) findViewById(R.id.ImageView);
-			ContentResolver cr = getContentResolver();
-			@SuppressWarnings("unused")
-			Bitmap bitmap;
-			try {
-				bitmap = android.provider.MediaStore.Images.Media.getBitmap(cr,
-						selectedImage);
-
-				// imageView.setImageBitmap(bitmap);
-				Toast.makeText(this, selectedImage.toString(),
-						Toast.LENGTH_LONG).show();
-			} catch (Exception e) {
-				Toast.makeText(this, "Failed to load", Toast.LENGTH_SHORT)
-						.show();
-				Log.e("Camera", e.toString());
-			}
-
-		}
 	}
 }

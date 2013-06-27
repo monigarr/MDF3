@@ -48,16 +48,6 @@
         android:background="@color/caribic_red"
         android:text="@string/email"
         android:textColor="@color/caribic_daylight" />
-    
-    <!--  Button
-        android:id="@+id/buttonPicture"
-        android:layout_width="88dip"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonEmail"
-        android:layout_toRightOf="@+id/imageView1"
-        android:text="@string/pic"
-    	android:background="@color/caribic_sun"
-        android:textColor="@color/caribic_brown"  / -->
 
     <Button
         android:id="@+id/buttonDelete"
